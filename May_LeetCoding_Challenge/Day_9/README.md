@@ -8,7 +8,7 @@ To perform a "flood fill", consider the starting pixel, plus any pixels connecte
 
 At the end, return the modified image.
 
-Example 1:
+**Example 1**:
 
 ```
 Input: 
@@ -18,10 +18,13 @@ sr = 1, sc = 1, newColor = 2
 Output: [[2,2,2],[2,2,0],[2,0,1]]
 
 Explanation: 
-From the center of the image (with position (sr, sc) = (1, 1)), all pixels connected by a path of the same color as the starting pixel are colored with the new color. Note the bottom corner is not colored 2, because it is not 4-directionally connected to the starting pixel.
+From the center of the image (with position (sr, sc) = (1, 1)), all pixels connected 
+by a path of the same color as the starting pixel are colored with the new color. 
+Note the bottom corner is not colored 2, because it is not 4-directionally connected 
+to the starting pixel.
 ```
 
-Note:
+**Note**:
 
 * The length of `image` and `image[0]` will be in the range [1, 50].
 * The given starting pixel will satisfy `0 <= sr < image.length` and `0 <= sc < image[0].length`.
