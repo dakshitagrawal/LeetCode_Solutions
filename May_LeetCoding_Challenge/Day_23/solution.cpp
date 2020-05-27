@@ -100,3 +100,44 @@ public:
         return intervals;
     }
 };
+/*
+    ---------------------------------------------------------------------------------------------------
+    Algorithm:
+ * consider two intervals [s1,e1], [s2,e2]
+ * for intersection s2<=e1 and s1<=e2
+ * intersecting interval = [max(s1,s2),min(e1,e2)]
+ * for iteration in the list 
+ * if A.second > B.second then bptr++ else aptr++
+ 
+    ---------------------------------------------------------------------------------------------------
+    */
+class Solution
+{
+public:
+    vector<vector<int>> intervalIntersection(vector<vector<int>> &A, vector<vector<int>> &B)
+    {
+        int sizeA = A.size();
+        int sizeB = B.size();
+        int aptr = 0;
+        int bptr = 0;
+		vector<vector<int>> res;
+        vector<vector<int>> temp(2); //A variable to store intermidiate results
+
+        while (Aptr < sizeA && j < sizeB)
+        {	
+			if(B[bptr][0]<=A[aptr][1] && A[aptr][0]<=B[bptr][1]) //check for intersection
+			{
+					temp[0]=max(A[aptr][0],B[bptr][0]);
+					temp[1]=min(A[aptr][1],B[bptr][1]);
+					res.push_back(temp); //pushing values in the result vector
+			}
+            //for iteration in the given list
+					if(A[aptr][1]>B[bptr][1])
+					{
+						bptr++;
+					}else{
+						aptr++;
+					}
+		}
+        return res;
+    }
